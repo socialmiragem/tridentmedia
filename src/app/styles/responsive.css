@@ -1,0 +1,215 @@
+@media (max-width: 1366px) {
+  #navigation {
+    & .nav-link {
+      font-size: 16px !important;
+    }
+  }
+  .btn-red {
+    font-size: 16px;
+  }
+  .btn-accent {
+    font-size: 16px;
+  }
+  #hero {
+    & .content-column {
+      & h3 {
+        font-size: 24px;
+      }
+      & .brand-name {
+        & .first {
+          font-size: 170px;
+          line-height: 170px;
+        }
+        & .last {
+          font-size: 170px;
+          line-height: 170px;
+        }
+      }
+    }
+  }
+  #aboutsection {
+    & h4 {
+      font-size: 24px;
+    }
+    & .content {
+      & h3 {
+        font-size: 35px;
+      }
+      & p {
+        font-size: 17px;
+        margin-bottom: 0;
+      }
+    }
+    & .button {
+      & a {
+        font-size: 16px;
+        /* height: 66px; */
+      }
+    }
+  }
+  .subheading {
+    & h4 {
+      font-size: 26px;
+    }
+  }
+  .subheading2 {
+    & h4 {
+      font-size: 26px;
+    }
+  }
+  #servicesection {
+    & .subheading {
+      & h4 {
+        font-size: 26px;
+      }
+    }
+    & .heading {
+      & h3 {
+        font-size: 36px;
+      }
+    }
+  }
+  #servicehoverchange {
+    & ul {
+      & li {
+        & h3 {
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
+    }
+    & .cardcontent {
+      padding-top: 30px;
+      & p {
+        font-size: 18px;
+      }
+    }
+  }
+  #whychooseus {
+    background-attachment: fixed !important;
+    & h3 {
+      font-size: 36px;
+    }
+    & p {
+      font-size: 18px;
+    }
+    .cards {
+      height: 400px;
+      & p {
+        font-size: 18px;
+      }
+    }
+  }
+  .contact-card {
+    .subheading-3 {
+      h4 {
+        font-size: 20px;
+      }
+    }
+    .mainheading {
+      padding: 25px 0px 0px 25px;
+      h3 {
+        font-size: 36px;
+      }
+    }
+    .form {
+      padding: 20px 25px;
+      & .feild {
+        padding-bottom: 20px;
+        & label {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  #contactform {
+    .wrapper {
+      height: 773px;
+    }
+  }
+  #footer {
+    .menu {
+      ul {
+        & li {
+          & a {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+    .email-anchor {
+      & .ancholabel {
+        font-size: 18px;
+      }
+      & .mail {
+        font-size: 26px;
+      }
+    }
+    & .icons {
+      &::before {
+        margin-left: 50px;
+        transform: scale(0.6);
+      }
+      &::after {
+        margin-right: 50px;
+        transform: scale(0.6);
+      }
+    }
+  }
+
+  /* inner pages */
+
+  /* about */
+  #innerBanner {
+    & h2 {
+      font-size: 350px;
+    }
+  }
+  #aboutpagesection {
+    h3 {
+      font-size: 36px;
+    }
+    p {
+      color: var(--text);
+      font-size: 17px;
+    }
+  }
+  #purpose {
+    position: relative !important;
+    &::after {
+      content: url(/images/icon.svg);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(50%);
+    }
+    & .purposecards {
+      .purposecard {
+        border-radius: 15px;
+        padding: 20px;
+      }
+      & .wrapper {
+        width: 40px;
+        height: 40px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      h3 {
+        margin-top: 30px;
+        font-size: 36px;
+      }
+      p {
+        color: var(--white);
+        font-size: 18px;
+      }
+    }
+  }
+  #cta {
+    padding: 30px;
+    & h3 {
+      font-size: 90px;
+    }
+  }
+}

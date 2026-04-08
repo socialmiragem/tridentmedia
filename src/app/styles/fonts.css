@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'SF Viper Squadron';
+  src: url('/fonts/SFViperSquadron.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF compact';
+  src: url('/fonts/SFCompactText-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Viper Squadron Solid';
+  src: url('/fonts/SFViperSquadronSolid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+h1,h2,h4,h5,h6{
+    font-family: 'SF Viper Squadron', sans-serif !important;
+}
+p,li,ul,div,a{
+    font-family: 'SF compact', sans-serif !important;
+}
+h3{
+font-family: 'SF Viper Squadron Solid', sans-serif !important;
+}
