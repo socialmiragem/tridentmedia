@@ -26,7 +26,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="row m-0 justify-content-center mt-3">
+          <div className="row m-0 justify-content-center mt-3 py-3">
             <div className="col-md-5">
               <Link href="mailto:contact@tridentcreative.us" className="text-decoration-none">
                 <div className="email-anchor">
@@ -51,13 +51,13 @@ const Footer = () => {
         </div>
 
 
-        <div className="subfooter pt-3 border-top">
+        <div className="subfooter pt-5 border-top">
           <div className="row mx-0">
             <div className="col-md-12">
               <p className="text-center text-white text-capitalize small">copyright © 2026 Trident Creative. All Rights Reserved.</p>
             </div>
             <div className="col-md-12">
-              <img src="/images/brandname.svg" alt="" className="img-fluid" />
+              <img src="/images/brandname.svg" alt="" className="img-fluid d-block mx-auto" />
             </div>
           </div>
         </div>

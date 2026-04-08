@@ -10,7 +10,7 @@ const Purpose = () => {
                     </h4>
                 </div>
                 <div className="purposecards bg-white p-1">
-                    <div className="row g-3 d-flex align-items-stretch">
+                    <div className="row g-1 d-flex align-items-stretch">
                         <div className="col-md-4 d-flex">
                             <div className="w-100 bg-black purposecard d-flex flex-column">
                                 <img src="/images/aboutpurpose.png" alt="" className="img-fluid w-100" />
