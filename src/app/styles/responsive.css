@@ -224,10 +224,8 @@
       font-size: 90px;
     }
   }
-}
 
-
-.svc-title-bg {
+  .svc-title-bg {
   font-size: 44px;
 }
 .svc-card {
@@ -281,3 +279,7 @@
     }
   }
 }
+}
+
+
+
