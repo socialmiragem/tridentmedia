@@ -39,7 +39,7 @@ export default function Navbar() {
               <li className="nav-item dropdown">
                 <a
                   className={`nav-link dropdown-toggle fw-semibold fs-18 text-uppercase ${isActive("/services") ? "active" : ""}`}
-                  href="#"
+                  href="javascript:void(0)"
                   role="button"
                   data-bs-toggle="dropdown"
                 >
@@ -53,6 +53,31 @@ export default function Navbar() {
                       Graphic Design
                     </Link>
                   </li>
+                  {/* <li>
+                    <Link href="/exhibit-design" className="dropdown-item">
+                      Exhibit Design
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/3d-modeling" className="dropdown-item">
+                      3D Modeling
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/photography" className="dropdown-item">
+                      Photography
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/illustrations" className="dropdown-item">
+                      Illustrations
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/woodcraft" className="dropdown-item">
+                      Woodcraft
+                    </Link>
+                  </li> */}
                   
                 </ul>
               </li>

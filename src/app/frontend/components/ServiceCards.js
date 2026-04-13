@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-export default function ServiceCards({data, title}) {
+export default function ServiceCards({ data, title }) {
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const cardsRef = useRef([]);
@@ -63,7 +63,9 @@ export default function ServiceCards({data, title}) {
                         scale: 1,
                         duration: 1,
                         onStart: () => {
-                            titleRef.current.innerText = service.title;
+                            if (titleRef.current) {
+                                titleRef.current.innerText = service.title;
+                            }
                         },
                     }
                 );
