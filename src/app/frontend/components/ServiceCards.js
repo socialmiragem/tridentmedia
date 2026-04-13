@@ -7,15 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const services = [
-    { title: 'LOGO DESIGN', img: '/images/placeholder.png', desc: 'Every brand begins with a mark. We craft logos that tell your story, creating lasting impressions across every touchpoint.', side: 'left' },
-    { title: 'MURALS DESIGN', img: '/images/placeholder.png', desc: 'Walls become stories. We design murals that transform spaces into bold visual experiences that capture attention.', side: 'right' },
-    { title: 'SIGNAGE DESIGN', img: '/images/placeholder.png', desc: 'Your presence deserves to be seen. We create signage that guides, informs, and strengthens your brand.', side: 'left' },
-    { title: 'MARKETING', img: '/images/placeholder.png', desc: 'Ideas need a voice. We design marketing visuals that connect, engage, and move your audience.', side: 'right' },
-    { title: 'VINYL WRAPS', img: '/images/placeholder.png', desc: 'Turn movement into impact. We create vinyl wraps that transform surfaces into bold, eye-catching brand statements.', side: 'left' },
-];
 
-export default function ServiceCards() {
+
+export default function ServiceCards({data, title}) {
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const cardsRef = useRef([]);
@@ -39,23 +33,23 @@ export default function ServiceCards() {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: 'top top',
-                    end: () => `+=${services.length * 1200}`,
+                    end: () => `+=${data.length * 1200}`,
                     pin: true,
                     scrub: 1,
                     onUpdate: (self) => {
-                        const total = services.length;
+                        const total = data.length;
                         const progress = self.progress * total;
                         const index = Math.min(total - 1, Math.max(0, Math.floor(progress)));
 
                         if (currentIndex.current !== index) {
                             currentIndex.current = index;
-                            changeTitle(services[index].title);
+                            changeTitle(data[index].title);
                         }
                     }
                 },
             });
 
-            services.forEach((service, i) => {
+            data.forEach((service, i) => {
 
                 const card = cardsRef.current[i];
 
@@ -97,7 +91,7 @@ export default function ServiceCards() {
             <section className='heading'>
                 <div className="row mx-0">
                     <div className="col-md-12 text-center">
-                        <h3>our Graphic Design Solution includes</h3>
+                        <h3>{title}</h3>
                     </div>
                 </div>
             </section>
@@ -105,13 +99,13 @@ export default function ServiceCards() {
                 {/* Background Title */}
                 <div className="svc-title-wrapper">
                     <h2 ref={titleRef} className="svc-title-bg">
-                        {services[0].title}
+                        {data[0].title}
                     </h2>
                 </div>
 
                 <div className="svc-container">
                     <div className="svc-card-stack">
-                        {services.map((item, i) => (
+                        {data.map((item, i) => (
                             <div
                                 key={i}
                                 ref={(el) => (cardsRef.current[i] = el)}

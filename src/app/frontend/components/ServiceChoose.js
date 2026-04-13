@@ -1,6 +1,6 @@
 import React from 'react'
 import {servicechoose} from "@/app/data/data";
-const ServiceChoose = ({ icon, title, desc }) => {
+const ServiceChoose = ({data, title}) => {
     return (
         <>
             <div id="ServiceChoose" className='px-5 mb-5 bg-black py-5 position-relative'>
@@ -11,14 +11,14 @@ const ServiceChoose = ({ icon, title, desc }) => {
                 </div>
                 <div className='heading'>
                     <h2 className='text-white text-center '>
-                        Strategic Graphic Design That Drives Impact
+                        {title}
                     </h2>
                 </div>
                 <div className="purposecards bg-white p-1 mt-5">
                     <div className="row g-1 d-flex align-items-stretch">
 
                         {
-                            servicechoose?.map(({ id, title, icon, desc }) => {
+                            data?.map(({ id, title, icon, desc }) => {
                                 return (
                                     <div key={id} className="col-md-6 d-flex">
                                         <div className="w-100 bg-black purposecard d-flex flex-column">
