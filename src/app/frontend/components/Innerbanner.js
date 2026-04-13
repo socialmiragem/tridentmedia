@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Innerbanner = () => {
+const Innerbanner = ({title}) => {
   return (
     <>
       <div id="innerBanner" className="overflow-hidden">
@@ -14,7 +14,7 @@ const Innerbanner = () => {
               <div className="col-md-12">
                 <div className="row">
                   <div className="col-md-12">
-                    <h2 className="">About</h2>
+                    <h2 className="">{title}</h2>
                   </div>
                 </div>
               </div>

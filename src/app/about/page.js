@@ -8,7 +8,9 @@ import Cta from '../frontend/components/Cta'
 const page = () => {
   return (
     <>
-      <Innerbanner/>
+      <Innerbanner 
+        title="About"
+      />
       <AboutPageSection/>
       <Purpose/>
       <WhyChooseUs/>
