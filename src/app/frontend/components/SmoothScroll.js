@@ -1,40 +1,24 @@
-'use client';
+'use client'
 
-import { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect } from 'react'
+import LocomotiveScroll from 'locomotive-scroll'
+import 'locomotive-scroll/dist/locomotive-scroll.css'
 
 export default function SmoothScroll({ children }) {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.4,
-      smoothWheel: true,
-      smoothTouch: false,
-      easing: (t) => 1 - Math.pow(1 - t, 4),
-    });
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      lerp: 1.8,
+      duration : 1.4,
+    })
 
-    // Sync Lenis with GSAP ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update);
+    return () => scroll.destroy()
+  }, [])
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-
-    // Refresh on load
-    ScrollTrigger.refresh();
-
-    return () => {
-      lenis.destroy();
-      gsap.ticker.remove((time) => {
-        lenis.raf(time * 1000);
-      });
-    };
-  }, []);
-
-  return <>{children}</>;
+  return (
+    <div data-scroll-container>
+      {children}
+    </div>
+  )
 }

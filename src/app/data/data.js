@@ -28,13 +28,13 @@ export const servicechoose = [
 export const services = [
   {
     title: "LOGO DESIGN",
-    img: "/images/placeholder.png",
+    img: "/images/service/ld.png",
     desc: "Every brand begins with a mark. We craft logos that tell your story, creating lasting impressions across every touchpoint.",
     side: "left",
   },
   {
     title: "MURALS DESIGN",
-    img: "/images/placeholder.png",
+    img: "/images/service/md.png",
     desc: "Walls become stories. We design murals that transform spaces into bold visual experiences that capture attention.",
     side: "right",
   },
@@ -46,13 +46,13 @@ export const services = [
   },
   {
     title: "MARKETING",
-    img: "/images/placeholder.png",
+    img: "/images/service/marketing.png",
     desc: "Ideas need a voice. We design marketing visuals that connect, engage, and move your audience.",
     side: "right",
   },
   {
     title: "VINYL WRAPS",
-    img: "/images/placeholder.png",
+    img: "/images/service/vinyl.png",
     desc: "Turn movement into impact. We create vinyl wraps that transform surfaces into bold, eye-catching brand statements.",
     side: "left",
   },
@@ -89,19 +89,19 @@ export const servicechoose_ed = [
 export const services_ed = [
   {
     title: "Exhibit models",
-    img: "/images/placeholder.png",
+    img: "/images/service/em.png",
     desc: "Ideas take shape here. We build exhibit models that turn concepts into tangible forms, helping you present and refine.",
     side: "left",
   },
   {
     title: "Exhibit graphics",
-    img: "/images/placeholder.png",
+    img: "/images/service/eg.png",
     desc: "Your story meets the spotlight. We design exhibit graphics that draw attention and guide visitors through your space.",
     side: "right",
   },
   {
     title: "Pull-Up banners",
-    img: "/images/placeholder.png",
+    img: "/images/service/pub.png",
     desc: "First impressions matter. We create pull-up banners that speak clearly, stand tall, and capture attention instantly.",
     side: "left",
   },
@@ -144,7 +144,7 @@ export const servicechoose_modeling = [
 export const services_modeling = [
   {
     title: "Exhibits",
-    img: "/images/placeholder.png",
+    img: "/images/service/e.png",
     desc: "Every exhibit begins as an idea. We shape it into a visual story that captures attention and leaves a lasting mark.",
     side: "left",
   },
@@ -162,7 +162,7 @@ export const services_modeling = [
   },
   {
     title: "Printing",
-    img: "/images/placeholder.png",
+    img: "/images/service/p.png",
     desc: "Ideas deserve to be seen. We deliver high-quality printing that turns designs into tangible, impactful results.",
     side: "right",
   },
@@ -199,25 +199,25 @@ export const servicechoose_photography = [
 export const services_photography = [
   {
     title: "Creative",
-    img: "/images/placeholder.png",
+    img: "/images/service/c.png",
     desc: "Every frame tells a story. We capture creative visuals that express ideas, emotion, and originality in a way that stands out.",
     side: "left",
   },
   {
     title: "Promotional",
-    img: "/images/placeholder.png",
+    img: "/images/service/promo.png",
     desc: "Your brand deserves attention. We create promotional shots that highlight value, attract audiences, and drive engagement.",
     side: "right",
   },
   {
     title: "Landscape",
-    img: "/images/placeholder.png",
+    img: "/images/service/l.png",
     desc: "Nature speaks in moments. We capture landscapes that reflect depth, mood, and beauty through every scene.",
     side: "left",
   },
   {
     title: "Portrait",
-    img: "/images/placeholder.png",
+    img: "/images/service/portrait.png",
     desc: "Every face has a story. We create portraits that capture personality, emotion, and presence with clarity and depth.",
     side: "right",
   },
@@ -304,19 +304,19 @@ export const servicechoose_woodcraft = [
 export const services_woodcraft = [
   {
     title: "Design",
-    img: "/images/placeholder.png",
+    img: "/images/service/d.png",
     desc: "Every piece begins with an idea. We design woodcraft concepts that blend creativity, function, and timeless appeal.",
     side: "left",
   },
   {
     title: "Production prep",
-    img: "/images/placeholder.png",
+    img: "/images/service/pp.png",
     desc: "Before creation begins, we prepare every detail, ensuring each design is ready for precise and efficient production.",
     side: "right",
   },
   {
-    title: "Laser engraving </br> & cutting",
-    img: "/images/placeholder.png",
+    title: "Laser engraving & cutting",
+    img: "/images/service/le.png",
     desc: "Precision meets craft. We engrave and cut wood with detail, turning designs into refined and lasting pieces.",
     side: "left",
   },

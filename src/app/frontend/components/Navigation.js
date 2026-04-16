@@ -53,7 +53,7 @@ export default function Navbar() {
                       Graphic Design
                     </Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link href="/exhibit-design" className="dropdown-item">
                       Exhibit Design
                     </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
                     <Link href="/woodcraft" className="dropdown-item">
                       Woodcraft
                     </Link>
-                  </li> */}
+                  </li>
                   
                 </ul>
               </li>

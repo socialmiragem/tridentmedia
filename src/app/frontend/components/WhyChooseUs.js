@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
                 <div className='py-5'>
                     <div className='subheading2' style={{ backgroundColor: "#fafafa" }}>
                         <h4 style={{ color: "#ed1c24" }}>
-                            <span className='me-3'>•</span>what sets us apart<span className='ms-3'>•</span>
+                            <span className='me-3'>•</span>What sets Trident Creative Apart<span className='ms-3'>•</span>
                         </h4>
                     </div>
                 </div>

@@ -21,20 +21,23 @@ const ServiceHoverChange = () => {
                     <div className="col-md-7">
                         <div className='listing'>
                             <ul className='list-unstyled'>
-                                <li onClick={() => setActiveCard(0)}>
-                                    <span><img src="/images/service1.svg" alt="" className="img-fluid" /></span><h3>3d printing</h3>
+                                <li onClick={() => setActiveCard(0)} className={activeCard === 0 ? "active" : ""}>
+                                    <span><img src="/images/service1.svg" alt="" className="img-fluid" /></span><h3>graphic design</h3>
                                 </li>
-                                <li onClick={() => setActiveCard(1)}>
-                                    <span><img src="/images/service2.svg" alt="" className="img-fluid" /></span><h3>woodcraft</h3>
+                                <li onClick={() => setActiveCard(1)} className={activeCard === 1 ? "active" : ""}>
+                                    <span><img src="/images/service2.svg" alt="" className="img-fluid" /></span><h3>Exhibit design</h3>
                                 </li>
-                                <li onClick={() => setActiveCard(2)}>
-                                    <span><img src="/images/service3.svg" alt="" className="img-fluid" /></span><h3>vehicle wraps</h3>
+                                <li onClick={() => setActiveCard(2)} className={activeCard === 2 ? "active" : ""}>
+                                    <span><img src="/images/service3.svg" alt="" className="img-fluid" /></span><h3>3d Modeling</h3>
                                 </li>
-                                <li onClick={() => setActiveCard(3)}>
-                                    <span><img src="/images/service4.svg" alt="" className="img-fluid" /></span><h3>vinyl wraps</h3>
+                                <li onClick={() => setActiveCard(3)} className={activeCard === 3 ? "active" : ""}>
+                                    <span><img src="/images/service4.svg" alt="" className="img-fluid" /></span><h3>Photography</h3>
                                 </li>
-                                <li onClick={() => setActiveCard(4)}>
-                                    <span><img src="/images/service5.svg" alt="" className="img-fluid" /></span><h3>exhibit design</h3>
+                                <li onClick={() => setActiveCard(4)} className={activeCard === 4 ? "active" : ""}>
+                                    <span><img src="/images/service5.svg" alt="" className="img-fluid" /></span><h3>Illustrations</h3>
+                                </li>
+                                <li onClick={() => setActiveCard(5)} className={activeCard === 5 ? "active" : ""}>
+                                    <span><img src="/images/service2.svg" alt="" className="img-fluid" /></span><h3>Woodcraft</h3>
                                 </li>
                             </ul>
                         </div>
@@ -49,12 +52,12 @@ const ServiceHoverChange = () => {
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
-                                <ul className='list-disc' style={{listStyle : 'disc'}}>
-                                    <li>Rapid Prototypes</li>
-                                    <li>Custom Parts</li>
-                                    <li>Scale Models</li>
-                                    <li>Concept Samples</li>
-                                    <li>Functional Pieces</li>
+                                <ul className='' >
+                                    <li>Logos</li>
+                                    <li>Murals</li>
+                                    <li>Signage</li>
+                                    <li>Marketing</li>
+                                    <li>Vinyl Wraps</li>
                                 </ul>
                             </div>
                         </div>
@@ -65,12 +68,12 @@ const ServiceHoverChange = () => {
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
-                                <ul className='list-disc'>
-                                    <li>Rapid Prototypes</li>
-                                    <li>Custom Parts</li>
-                                    <li>Scale Models</li>
-                                    <li>Concept Samples</li>
-                                    <li>Functional Pieces</li>
+                                <ul className=''>
+                                    <li>Exhibit models</li>
+                                    <li>Exhibit graphics</li>
+                                    <li>pull-Up banners</li>
+                                    <li>Signage</li>
+                                    {/* <li>Functional Pieces</li> */}
                                 </ul>
                             </div>
                         </div>
@@ -81,12 +84,12 @@ const ServiceHoverChange = () => {
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
-                                <ul className='list-disc'>
-                                    <li>Rapid Prototypes</li>
-                                    <li>Custom Parts</li>
-                                    <li>Scale Models</li>
-                                    <li>Concept Samples</li>
-                                    <li>Functional Pieces</li>
+                                <ul className=''>
+                                    <li>Exhibits</li>
+                                    <li>Spaces</li>
+                                    <li>Objects</li>
+                                    <li>Printing</li>
+                                    {/* <li>Functional Pieces</li> */}
                                 </ul>
                             </div>
                         </div>
@@ -97,12 +100,12 @@ const ServiceHoverChange = () => {
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
-                                <ul className='list-disc'>
-                                    <li>Rapid Prototypes</li>
-                                    <li>Custom Parts</li>
-                                    <li>Scale Models</li>
-                                    <li>Concept Samples</li>
-                                    <li>Functional Pieces</li>
+                                <ul className=''>
+                                    <li>Creative</li>
+                                    <li>Promotional</li>
+                                    <li>Landscape</li>
+                                    <li>Portrait</li>
+                                    {/* <li>Functional Pieces</li> */}
                                 </ul>
                             </div>
                         </div>
@@ -113,12 +116,27 @@ const ServiceHoverChange = () => {
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
-                                <ul className='list-disc'>
-                                    <li>Rapid Prototypes</li>
-                                    <li>Custom Parts</li>
-                                    <li>Scale Models</li>
-                                    <li>Concept Samples</li>
-                                    <li>Functional Pieces</li>
+                                <ul className=''>
+                                    <li>Sketching</li>
+                                    <li>Mechanical</li>
+                                    <li>Landscape</li>
+                                    {/* <li>Concept Samples</li>
+                                    <li>Functional Pieces</li> */}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className='card5' style={getStyle(5)}>
+                            <div>
+                                <img src="/images/woodcraft.png" alt="" className="img-fluid" />
+                            </div>
+                            <div className='cardcontent'>
+                                <p>what’s included</p>
+                                <ul className=''>
+                                    <li>Design</li>
+                                    <li>Production prep</li>
+                                    <li>Laser engraving & cutting</li>
+                                    {/* <li>Concept Samples</li>
+                                    <li>Functional Pieces</li> */}
                                 </ul>
                             </div>
                         </div>

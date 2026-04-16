@@ -9,18 +9,19 @@ import Footer from './frontend/components/Footer';
 import SmoothScroll from './frontend/components/SmoothScroll';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-
 gsap.registerPlugin(ScrollTrigger);
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="">
       <body>
         <BootstrapJS/>
-        {/* <SmoothScroll> */}
+        <SmoothScroll>
         <Navbar />
         {children}
         <Footer/>
-        {/* </SmoothScroll> */}
+        </SmoothScroll>
       </body>
     </html>
   );
