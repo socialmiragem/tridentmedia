@@ -48,7 +48,7 @@ const ServiceHoverChange = () => {
 
                         <div className='card1' style={getStyle(0)}>
                             <div>
-                                <img src="/images/card1.png" alt="" className="img-fluid" />
+                                <img src="/images/tabs/gd.png" alt="" className="img-fluid" />
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
@@ -64,7 +64,7 @@ const ServiceHoverChange = () => {
 
                         <div className='card2' style={getStyle(1)}>
                             <div>
-                                <img src="/images/card2.png" alt="" className="img-fluid" />
+                                <img src="/images/tabs/ex.png" alt="" className="img-fluid" />
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
@@ -80,7 +80,7 @@ const ServiceHoverChange = () => {
 
                         <div className='card3' style={getStyle(2)}>
                             <div>
-                                <img src="/images/card3.png" alt="" className="img-fluid" />
+                                <img src="/images/tabs/3d.png" alt="" className="img-fluid" />
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
@@ -96,7 +96,7 @@ const ServiceHoverChange = () => {
 
                         <div className='card4' style={getStyle(3)}>
                             <div>
-                                <img src="/images/card4.png" alt="" className="img-fluid" />
+                                <img src="/images/tabs/ph.png" alt="" className="img-fluid" />
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
@@ -112,7 +112,7 @@ const ServiceHoverChange = () => {
 
                         <div className='card5' style={getStyle(4)}>
                             <div>
-                                <img src="/images/card5.png" alt="" className="img-fluid" />
+                                <img src="/images/tabs/ill.png" alt="" className="img-fluid" />
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>
@@ -127,7 +127,7 @@ const ServiceHoverChange = () => {
                         </div>
                         <div className='card5' style={getStyle(5)}>
                             <div>
-                                <img src="/images/woodcraft.png" alt="" className="img-fluid" />
+                                <img src="/images/tabs/wood.png" alt="" className="img-fluid" />
                             </div>
                             <div className='cardcontent'>
                                 <p>what’s included</p>

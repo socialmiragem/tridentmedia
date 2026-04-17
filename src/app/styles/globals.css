@@ -451,7 +451,7 @@ body {
 }
 
 #footer {
-  background-image: url(/images/banner/footer.png);
+  background-image: url(/images/footer_bg.png);
   .menu {
     ul {
       display: flex;
@@ -476,7 +476,7 @@ body {
     border: 2px solid #63636350;
     padding: 25px;
     border-radius: 15px;
-    background-color: var(--black);
+    /* background-color: var(--black); */
     & .ancholabel {
       margin: 0;
       color: #ffffff4d;

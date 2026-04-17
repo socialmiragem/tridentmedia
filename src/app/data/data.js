@@ -255,7 +255,7 @@ export const servicechoose_illustrations = [
 export const services_illustrations = [
   {
     title: "Sketching",
-    img: "/images/placeholder.png",
+    img: "/images/service/sk.png",
     desc: "Every idea starts as a line. We sketch concepts that evolve into detailed visuals, capturing thought and motion.",
     side: "left",
   },
