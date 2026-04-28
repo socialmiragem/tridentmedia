@@ -1,14 +1,36 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const AboutSection = () => {
+  const [about, setAbout] = useState(null);
+
+  useEffect(() => {
+    const fetchHero = async () => {
+      try {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/about`);
+
+        setAbout(res.data.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchHero();
+  }, []);
+  if (!about) return null; // or loader
+
+  const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${about.image}`;
   return (
     <>
       <div id="aboutsection" className="">
         <div className="row m-0 gap-0">
           <div className="col-md-6 p-0">
             <img
-              src="/images/about-front.svg"
+              // src="/images/about-front.svg"
+              src={imageUrl}
               alt=""
               className="img-fluid h-100 object-fit-cover"
             />
@@ -23,30 +45,20 @@ const AboutSection = () => {
             </div>
             <div className="position-absolute top-0 w-100">
               <div className="border-bottom border-secondary rounded-0 w-100">
-                <h4>About</h4>
+                <h4>{about.sub_title}</h4>
               </div>
               <div className="content">
-                <h3>Crafting Innovation Through Design Excellence</h3>
+                <h3>{about.title}</h3>
                 <p>
-                  Trident Creative is a multidisciplinary design studio built
-                  around the idea that strong concepts deserve thoughtful
-                  execution. At its core, the studio specializes in graphic
-                  design in many capacities and 3D modeling for trade show
-                  exhibits—bringing ideas to life through visually compelling,
-                  strategically crafted design.
+                  {about.description_1}
                 </p>
                 <p>
-                  With experience across a wide range of creative and production
-                  disciplines, Trident Creative supports clients at every stage
-                  of a project. Whether developing a concept from the ground up
-                  or refining an existing vision, the approach is collaborative,
-                  detail-driven, and focused on moving ideas forward with
-                  clarity and purpose.
+                  {about.description_2}
                 </p>
               </div>
             </div>
             <div className="button">
-              <Link href="#">Learn More</Link>
+              <Link href={about.button_link || "#"}>{about.button_text}</Link>
             </div>
           </div>
         </div>

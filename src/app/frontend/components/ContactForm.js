@@ -1,23 +1,23 @@
 import Link from 'next/link'
 import React from 'react'
 
-const ContactForm = () => {
+const ContactForm = ({form_sub_title_prop,form_title,form_image}) => {
     return (
         <>
             <div id="contactform" className='px-5'>
                 <div className="row m-0">
                     <div className="col-md-6 ">
                         <div className='wrapper'>
-                            <img src="/images/contactimage.svg" alt="" className='img-fluid' />
+                            <img src={form_image} alt="" className='img-fluid' />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className='bg-white rounded-3 contact-card'>
                             <div className='subheading-3'>
-                                <h4>let’s talk</h4>
+                                <h4>{form_sub_title_prop}</h4>
                             </div>
                             <div className='mainheading'>
-                                <h3>Start the conversation</h3>
+                                <h3>{form_title}</h3>
                             </div>
                             <div className='form'>
                                 <form action="">
