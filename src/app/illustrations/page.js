@@ -9,7 +9,7 @@ import {servicechoose_illustrations, services_illustrations} from "@/app/data/da
 const page = () => {
   return (
     <>
-      <ServiceBanner src="/images/gd.png" first="illustrations" last="" />
+      <ServiceBanner src="/images/banner/illustration.png" first="illustrations" last="" />
 
       <div className="background">
         <SectionTitle title="what’s included" bg="#fafafa" color="#ed1c24" />

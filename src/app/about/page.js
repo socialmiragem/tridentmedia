@@ -8,7 +8,8 @@ import Cta from '../frontend/components/Cta'
 const page = () => {
   return (
     <>
-      <Innerbanner 
+      <Innerbanner
+        bg="/images/banner/about.png" 
         title="About"
       />
       <AboutPageSection/>

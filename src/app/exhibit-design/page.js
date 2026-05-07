@@ -9,7 +9,7 @@ import {servicechoose_ed, services_ed} from "@/app/data/data";
 const page = () => {
   return (
     <>
-      <ServiceBanner src="/images/gd.png" first="EXHIBIT" last="design" />
+      <ServiceBanner src="/images/banner/exibit.png" first="EXHIBIT" last="design" />
 
       <div className="background">
         <SectionTitle title="what’s included" bg="#fafafa" color="#ed1c24" />
