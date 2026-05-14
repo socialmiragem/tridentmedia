@@ -160,7 +160,7 @@ body {
         color: var(--white);
         text-align: start;
         line-height: 220px;
-        /* font-weight: 800; */
+        font-weight: 800;
         letter-spacing: 4px;
       }
       & .last {
@@ -172,6 +172,11 @@ body {
       }
     }
   }
+}
+.section_heading h3{
+  font-weight: 800 !important;
+  letter-spacing: 4px;
+
 }
 #aboutsection {
   & h4 {

@@ -91,7 +91,7 @@ export default function ServiceCards({ data, title }) {
   const BASE = process.env.NEXT_PUBLIC_BASE_URL;
   return (
     <>
-      <section className="heading">
+      <section className="heading section_heading">
         <div className="row mx-0">
           <div className="col-md-12 text-center">
             <h3>{title}</h3>
