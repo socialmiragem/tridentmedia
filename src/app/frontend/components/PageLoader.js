@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLoader } from "@/app/context/LoaderContext";
 
@@ -12,40 +11,36 @@ const PageLoader = () => {
     <AnimatePresence>
 
       {loading && (
+
         <motion.div
           className="page-loader"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
+
+          initial={{ x: "100%" }}
+          animate={{ x: "0%" }}
+          exit={{ x: "-100%" }}
+
+          transition={{
+            duration: 0.8,
+            ease: [0.76, 0, 0.24, 1],
+          }}
         >
 
-          <div className="logo-reveal-wrapper">
+          <div className="loader-panel left-panel"></div>
+
+          <div className="loader-panel center-panel">
 
             <img
               src="/images/logo.png"
               alt="Logo"
-                height=''
-                width=''
-              priority
               className="loader-logo img-fluid"
-              style={{filter : 'invert(1)'}}
-            />
-
-            <motion.div
-              className="logo-mask"
-              initial={{ x: 0 }}
-              animate={{ x: "100%" }}
-              transition={{
-                duration: 1.5,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatDelay: 0.2,
-              }}
             />
 
           </div>
 
+          <div className="loader-panel right-panel"></div>
+
         </motion.div>
+
       )}
 
     </AnimatePresence>
