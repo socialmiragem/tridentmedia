@@ -4,24 +4,38 @@ import "@/app/styles/globals.css";
 import "@/app/styles/responsive.css";
 
 import Navbar from './frontend/components/Navigation';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import Footer from './frontend/components/Footer';
 import SmoothScroll from './frontend/components/SmoothScroll';
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 
+import { LoaderProvider } from './context/LoaderContext';
+import PageLoader from './frontend/components/PageLoader';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <body>
-        <BootstrapJS/>
-        <SmoothScroll>
-        <Navbar />
-        {children}
-        <Footer/>
-        </SmoothScroll>
+
+        <LoaderProvider>
+
+          <PageLoader />
+
+          <BootstrapJS />
+
+          <SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
+
+        </LoaderProvider>
+
       </body>
     </html>
   );

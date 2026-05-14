@@ -8,21 +8,29 @@ import SectionTitle from "../frontend/components/SectionTitle";
 import ServiceCards from "../frontend/components/ServiceCards";
 import ServiceChoose from "../frontend/components/ServiceChoose";
 import Cta from "../frontend/components/Cta";
+import { useLoader } from "@/app/context/LoaderContext";
 
 const page = () => {
   const [hero, setHero] = useState(null);
   const [card, setCard] = useState([]);
   const [choose, setChoose] = useState([]);
+  const { startLoading, stopLoading } = useLoader();
 
   useEffect(() => {
     const fetchHero = async () => {
       try {
+                        startLoading();
+
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}/photography/service-page`
         );
 
         setHero(res.data.data);
       } catch (err) {}
+finally {
+
+        stopLoading();
+      }
     };
 
     fetchHero();

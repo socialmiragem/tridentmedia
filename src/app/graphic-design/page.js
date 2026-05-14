@@ -7,14 +7,19 @@ import Cta from "../frontend/components/Cta";
 import { servicechoose, services } from "@/app/data/data";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLoader } from "@/app/context/LoaderContext";
 
 const page = () => {
   const [hero, setHero] = useState(null);
   const [card, setCard] = useState([]);
   const [choose, setChoose] = useState([]);
+  const { startLoading, stopLoading } = useLoader();
+
   useEffect(() => {
     const fetchHero = async () => {
       try {
+                        startLoading();
+
         const res = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}/service-page`,
         );
@@ -22,6 +27,10 @@ const page = () => {
         setHero(res.data.data);
       } catch (err) {
         // console.error(err);
+      }
+finally {
+
+        stopLoading();
       }
     };
 
