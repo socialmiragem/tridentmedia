@@ -1,27 +1,89 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import ServiceBanner from "../frontend/components/ServiceBanner";
 import SectionTitle from "../frontend/components/SectionTitle";
 import ServiceCards from "../frontend/components/ServiceCards";
 import ServiceChoose from "../frontend/components/ServiceChoose";
 import Cta from "../frontend/components/Cta";
-import {servicechoose_modeling, services_modeling} from "@/app/data/data";
 
 const page = () => {
+  const [hero, setHero] = useState(null);
+  const [card, setCard] = useState([]);
+  const [choose, setChoose] = useState([]);
+
+  useEffect(() => {
+    const fetchHero = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/3d-modeling/service-page`
+        );
+
+        setHero(res.data.data);
+      } catch (err) {}
+    };
+
+    fetchHero();
+  }, []);
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/3d-modeling/service-cards`
+        );
+
+        setCard(res.data.data);
+      } catch (err) {}
+    };
+
+    fetchCards();
+  }, []);
+
+  useEffect(() => {
+    const fetchChoose = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/3d-modeling/why-choose`
+        );
+
+        setChoose(res.data.data);
+      } catch (err) {}
+    };
+
+    fetchChoose();
+  }, []);
+
+  if (!hero) return null;
+
+  const imageUrl = hero?.image
+    ? `${process.env.NEXT_PUBLIC_BASE_URL}${hero.image}`
+    : "/images/gd.png";
+
   return (
     <>
-      <ServiceBanner src="/images/gd.png" first="3d" last="modeling" />
+      <ServiceBanner
+        src={imageUrl}
+        first={hero.first_text}
+        last={hero.last_text}
+      />
 
       <div className="background">
         <SectionTitle title="what’s included" bg="#fafafa" color="#ed1c24" />
-        <ServiceCards data = {services_modeling} title = "our 3d modeling Solution includes" />
+        <ServiceCards
+          data={card}
+          title="our 3d modeling Solution includes"
+        />
       </div>
 
-      <ServiceChoose 
-        data = {servicechoose_modeling}
-        title = "Precision 3D Modeling That Brings Ideas to Life"
+      <ServiceChoose
+        data={choose}
+        title="Precision 3D Modeling That Brings Ideas to Life"
       />
 
-      <Cta/>
+      <Cta />
     </>
   );
 };

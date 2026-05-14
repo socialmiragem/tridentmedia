@@ -1,27 +1,89 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import ServiceBanner from "../frontend/components/ServiceBanner";
 import SectionTitle from "../frontend/components/SectionTitle";
 import ServiceCards from "../frontend/components/ServiceCards";
 import ServiceChoose from "../frontend/components/ServiceChoose";
 import Cta from "../frontend/components/Cta";
-import {servicechoose_ed, services_ed} from "@/app/data/data";
 
 const page = () => {
+  const [hero, setHero] = useState(null);
+  const [card, setCard] = useState([]);
+  const [choose, setChoose] = useState([]);
+
+  useEffect(() => {
+    const fetchHero = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/exibit-design/service-page`
+        );
+
+        setHero(res.data.data);
+      } catch (err) {}
+    };
+
+    fetchHero();
+  }, []);
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/exibit-design/service-cards`
+        );
+
+        setCard(res.data.data);
+      } catch (err) {}
+    };
+
+    fetchCards();
+  }, []);
+
+  useEffect(() => {
+    const fetchChoose = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/exibit-design/why-choose`
+        );
+
+        setChoose(res.data.data);
+      } catch (err) {}
+    };
+
+    fetchChoose();
+  }, []);
+
+  if (!hero) return null;
+
+  const imageUrl = hero?.image
+    ? `${process.env.NEXT_PUBLIC_BASE_URL}${hero.image}`
+    : "/images/banner/exibit.png";
+
   return (
     <>
-      <ServiceBanner src="/images/banner/exibit.png" first="EXHIBIT" last="design" />
+      <ServiceBanner
+        src={imageUrl}
+        first={hero.first_text}
+        last={hero.last_text}
+      />
 
       <div className="background">
         <SectionTitle title="what’s included" bg="#fafafa" color="#ed1c24" />
-        <ServiceCards data = {services_ed} title = "our exhibit Design Solution includes" />
+        <ServiceCards
+          data={card}
+          title="our exhibit Design Solution includes"
+        />
       </div>
 
-      <ServiceChoose 
-        data = {servicechoose_ed}
-        title = "Exhibit Design That Captivates and Performs"
+      <ServiceChoose
+        data={choose}
+        title="Exhibit Design That Captivates and Performs"
       />
 
-      <Cta/>
+      <Cta />
     </>
   );
 };

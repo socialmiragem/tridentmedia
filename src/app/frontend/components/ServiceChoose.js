@@ -1,6 +1,8 @@
 import React from 'react'
 import {servicechoose} from "@/app/data/data";
 const ServiceChoose = ({data, title}) => {
+      const BASE = process.env.NEXT_PUBLIC_BASE_URL;
+
     return (
         <>
             <div id="ServiceChoose" className='px-5 mb-5 bg-black py-5 position-relative'>
@@ -25,7 +27,7 @@ const ServiceChoose = ({data, title}) => {
 
                                             <div className="wrapper mb-3">
                                                 <img
-                                                    src={icon}
+                                                    src={`${BASE}${icon}`}
                                                     alt={title}
                                                     className="img-fluid w-100"
                                                 />
