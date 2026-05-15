@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
   //   const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${about.image}`;
   return (
     <>
-      <div id="whychooseus" className="overflow-hidden px-5 py-5">
+      <div id="whychooseus" className="overflow-hidden px-md-5 px-2 py-5">
         <div className="py-5">
           <div className="subheading2" style={{ backgroundColor: "#fafafa" }}>
             <h4 style={{ color: "#ed1c24" }}>
@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-3 border-top-2 p-0">
+          <div className="col-md-3 border-top-2 p-md-0 px-md-0 px-3">
             <div className="cards-parent">
               <div className="d-flex justify-content-between align-items-center pt-4">
                 <p className="m-0">
@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3 border-top-2 p-0 alt-card">
+          <div className="col-md-3 border-top-2 p-md-0 px-md-0 px-3 alt-card">
             <div className="cards-parent">
               <div className="d-flex justify-content-between align-items-center pt-4">
                 <p className="m-0">
@@ -113,7 +113,7 @@ const WhyChooseUs = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3 border-top-2 p-0">
+          <div className="col-md-3 border-top-2 p-md-0 px-md-0 px-3">
             <div className="cards-parent">
               <div className="d-flex justify-content-between align-items-center pt-4">
                 <p className="m-0">
@@ -144,7 +144,7 @@ const WhyChooseUs = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3 border-top-2 p-0 alt-card">
+          <div className="col-md-3 border-top-2 p-md-0 px-md-0 px-3 alt-card">
             <div className="cards-parent">
               <div className="d-flex justify-content-between align-items-center pt-4">
                 <p className="m-0">

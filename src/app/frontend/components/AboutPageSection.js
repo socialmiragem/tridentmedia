@@ -31,7 +31,7 @@ const AboutPageSection = () => {
     return (
         <>
             <div id="aboutpagesection">
-                <div className='py-5 px-5'>
+                <div className='py-5 px-md-5 px-2'>
                     
                     {/* heading */}
                     <div className='subheading2' style={{ backgroundColor: "#fafafa" }}>
@@ -58,7 +58,7 @@ const AboutPageSection = () => {
                         </div>
 
                         {/* RIGHT SIDE */}
-                        <div className="col-md-6">
+                        <div className="col-md-6 aboutpage_content">
                             <p>{section.description_1}</p>
                             <p>{section.description_2}</p>
                             <p>{section.description_3}</p>

@@ -4,8 +4,8 @@ import React from 'react'
 const ContactForm = ({form_sub_title_prop,form_title,form_image}) => {
     return (
         <>
-            <div id="contactform" className='px-5'>
-                <div className="row m-0">
+            <div id="contactform" className='px-md-5 px-2'>
+                <div className="row m-0 gap-md-0 gap-3">
                     <div className="col-md-6 ">
                         <div className='wrapper'>
                             <img src={form_image} alt="" className='img-fluid' />

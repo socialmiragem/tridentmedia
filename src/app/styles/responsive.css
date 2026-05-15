@@ -280,3 +280,243 @@
     }
   }
 }
+@media (max-width: 500px) {
+  #navigation {
+    .logo {
+      width: 100%;
+      height: 50px;
+      max-width: 150px !important;
+    }
+  }
+  .sidebar {
+    a {
+      color: #252525 !important;
+    }
+  }
+  .h-100vh {
+    height: 75vh;
+  }
+  #hero {
+    & .content-column {
+      padding: 1rem;
+
+      & h3 {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+      }
+
+      & .brand-name {
+        & .first,
+        & .last {
+          font-size: 55px;
+          line-height: 42px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  #aboutsection .content h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+  #aboutsection .wrapper {
+    height: 670px;
+  }
+  #aboutsection .content p {
+    text-align: center;
+  }
+  #aboutsection h4 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  #servicesection .subheading h4 {
+    font-size: 18px;
+  }
+  #servicesection .heading h3 {
+    font-size: 28px;
+  }
+  #servicehoverchange ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #servicehoverchange ul li {
+    padding: 5px 0;
+    align-items: center;
+  }
+  #servicehoverchange ul li h3 {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  #servicehoverchange ul li img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  #whychooseus .subheading2 h4 {
+    font-size: 18px;
+  }
+  #whychooseus h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+  #whychooseus .cards-parent {
+    width: 100%;
+  }
+  #whychooseus .cards p {
+    font-size: 16px;
+    text-align: center;
+  }
+  #whychooseus .cards h3 {
+    text-align: center;
+    font-size: 90px !important;
+  }
+  #whychooseus .cards {
+    height: 400px;
+    margin-bottom: 50px;
+  }
+  #whychooseus .alt-card {
+    margin-top: 0;
+  }
+  #whychooseus .alt-card {
+    margin-top: 0;
+  }
+  #contactform .wrapper {
+    height: 325px;
+  }
+  .contact-card .mainheading {
+    padding: 15px 0 0 15px;
+  }
+  .contact-card .subheading-3 h4 {
+    font-size: 18px;
+    text-align: center;
+  }
+  .contact-card .mainheading h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+  #footer .menu ul {
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  #footer .email-anchor .mail {
+    font-size: 18px;
+  }
+
+  /* innerpages */
+  #innerBanner .wrapper {
+    height: 100%;
+  }
+  #innerBanner h2 {
+    font-size: 75px;
+    text-align: center;
+  }
+  #aboutpagesection .subheading2 h4 {
+    font-size: 18px;
+  }
+  #aboutpagesection h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .aboutpage_content {
+    text-align: center;
+    margin-top: 35px;
+  }
+  #purpose .subheading h4 {
+    font-size: 18px;
+  }
+  #cta h3 {
+    font-size: 40px;
+  }
+  .background .subheading2 h4 {
+    font-size: 18px;
+  }
+  .heading h3 {
+    text-transform: uppercase;
+    font-size: 28px;
+  }
+.svc-section {
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+    overflow: visible;
+    display: block;
+    /* margin-top: 40px; */
+  }
+
+  /* hide big animated background title */
+  .svc-title-wrapper {
+    display: block;
+    width: auto !important;
+    .svc-title-bg{
+      font-size: 24px;
+    }
+  }
+
+  .svc-container {
+    height: auto;
+    display: block;
+  }
+
+  /* turn stack into vertical flow */
+  .svc-card-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px;
+  }
+
+  /* IMPORTANT: kill absolute positioning */
+  .svc-card {
+    position: relative !important;
+    top: unset;
+    left: unset;
+    right: unset;
+    transform: none !important;
+    padding: 10px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+
+    opacity: 1 !important;
+  }
+
+  .svc-left,
+  .svc-right {
+    left: unset !important;
+    right: unset !important;
+  }
+
+  /* center content inside card */
+  .svc-card {
+    text-align: center;
+  }
+
+  .svc-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .svc-desc {
+    text-align: center;
+    font-size: 15px;
+  }
+#ServiceChoose .subheading h4{
+  font-size: 18px;
+}
+#ServiceChoose .heading h2{
+  font-size: 28px;
+}
+     #ServiceChoose .purposecards h3 {
+        margin-top: 50px;
+        font-size: 24px;
+    }
+}

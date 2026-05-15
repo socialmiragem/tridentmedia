@@ -1,34 +1,57 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ServiceCards({ data, title }) {
-  if (!Array.isArray(data) || data.length === 0) {
-    return null; 
-  }
+  if (!Array.isArray(data) || data.length === 0) return null;
+
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const cardsRef = useRef([]);
   const currentIndex = useRef(-1);
 
-  const changeTitle = (newTitle) => {
-    const el = titleRef.current;
+  const [isMobile, setIsMobile] = useState(false);
 
-    el.classList.add("fade");
+  const BASE = process.env.NEXT_PUBLIC_BASE_URL;
 
-    setTimeout(() => {
-      el.innerText = newTitle;
-      el.classList.remove("fade");
-    }, 150);
-  };
-  console.log(data)
+  // detect mobile
   useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    if (!data?.length) return;
+
+    // =========================
+    // MOBILE MODE (NO GSAP)
+    // =========================
+    if (isMobile) {
+      cardsRef.current.forEach((card) => {
+        if (card) {
+          card.style.opacity = 1;
+          card.style.transform = "none";
+        }
+      });
+
+      return;
+    }
+
+    // =========================
+    // DESKTOP MODE (GSAP)
+    // =========================
     const ctx = gsap.context(() => {
+      // set initial title (VERY IMPORTANT)
+      if (titleRef.current) {
+        titleRef.current.innerText = data[0]?.title || "";
+      }
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -36,17 +59,23 @@ export default function ServiceCards({ data, title }) {
           end: () => `+=${data.length * 1200}`,
           pin: true,
           scrub: 1,
+
           onUpdate: (self) => {
             const total = data.length;
             const progress = self.progress * total;
+
             const index = Math.min(
               total - 1,
-              Math.max(0, Math.floor(progress)),
+              Math.max(0, Math.floor(progress))
             );
 
             if (currentIndex.current !== index) {
               currentIndex.current = index;
-              changeTitle(data[index].title);
+
+              // update title safely
+              if (titleRef.current) {
+                titleRef.current.innerText = data[index].title;
+              }
             }
           },
         },
@@ -55,10 +84,13 @@ export default function ServiceCards({ data, title }) {
       data.forEach((service, i) => {
         const card = cardsRef.current[i];
 
-        // bring card in
         tl.fromTo(
           card,
-          { opacity: 0, y: 80, scale: 0.98 },
+          {
+            opacity: 0,
+            y: 80,
+            scale: 0.98,
+          },
           {
             opacity: 1,
             y: 0,
@@ -69,13 +101,11 @@ export default function ServiceCards({ data, title }) {
                 titleRef.current.innerText = service.title;
               }
             },
-          },
+          }
         );
 
-        // hold phase (important for “stay on screen” feel)
         tl.to({}, { duration: 1.2 });
 
-        // exit phase
         tl.to(card, {
           opacity: 0,
           y: -80,
@@ -86,11 +116,11 @@ export default function ServiceCards({ data, title }) {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [data, isMobile]);
 
-  const BASE = process.env.NEXT_PUBLIC_BASE_URL;
   return (
     <>
+      {/* HEADING */}
       <section className="heading section_heading">
         <div className="row mx-0">
           <div className="col-md-12 text-center">
@@ -98,11 +128,16 @@ export default function ServiceCards({ data, title }) {
           </div>
         </div>
       </section>
-      <section ref={sectionRef} className="svc-section">
-        {/* Background Title */}
+
+      {/* SERVICE SECTION */}
+      <section
+        ref={sectionRef}
+        className={`svc-section ${isMobile ? "is-mobile" : ""}`}
+      >
+        {/* DESKTOP TITLE */}
         <div className="svc-title-wrapper">
           <h2 ref={titleRef} className="svc-title-bg">
-            {data.title}
+            {data?.[0]?.title}
           </h2>
         </div>
 
@@ -113,17 +148,25 @@ export default function ServiceCards({ data, title }) {
                 key={i}
                 ref={(el) => (cardsRef.current[i] = el)}
                 className={`svc-card svc-${item.side}`}
-                style={{ opacity: 0 }}
+                style={{ opacity: isMobile ? 1 : 0 }}
               >
+                {/* MOBILE TITLE */}
+                {isMobile && (
+                  <h2 className="svc-card-title">
+                    {item.title}
+                  </h2>
+                )}
+
+                {/* IMAGE */}
                 <div className="svc-img">
                   <img
-                    // src={`${process.env.NEXT_PUBLIC_BASE_URL}${item.img}`}
-                     src={`${BASE}${item.img}`}
+                    src={`${BASE}${item.img}`}
                     alt={item.title}
-                    fill
-                    style={{ objectFit: "cover" }}
+                    className="img-fluid"
                   />
                 </div>
+
+                {/* DESC */}
                 <div className="svc-content">
                   <p className="svc-desc">{item.desc}</p>
                 </div>

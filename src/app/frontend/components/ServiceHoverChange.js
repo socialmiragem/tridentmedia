@@ -14,7 +14,7 @@ const ServiceHoverChange = ({ services }) => {
   });
 
   return (
-    <div className="px-5" id="servicehoverchange">
+    <div className="px-md-5 px-1" id="servicehoverchange">
       <div className="row">
         <div className="col-md-7">
           <ul className="list-unstyled">
@@ -35,13 +35,13 @@ const ServiceHoverChange = ({ services }) => {
 
         <div className="col-md-5" style={{ position: "relative" }}>
           {services.map((item, index) => (
-            <div key={index} style={getStyle(index)}>
-              <img src={item.image} alt="" />
-              <div className="cardcontent">
+            <div key={index} style={getStyle(index)} className="px-md-0 px-2">
+              <img src={item.image} alt="" className="img-fluid"/>
+              <div className="cardcontent text-md-start text-center">
                 <p>what’s included</p>
-                <ul>
+                <ul className="text-md-start text-center">
                   {item.items.map((text, i) => (
-                    <li key={i}>{text}</li>
+                    <li className="text-md-start text-center" key={i}>{text}</li>
                   ))}
                 </ul>
               </div>

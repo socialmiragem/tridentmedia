@@ -26,7 +26,7 @@ const Purpose = () => {
 
     return (
         <>
-            <div id="purpose" className='px-5 bg-black py-5'>
+            <div id="purpose" className='px-md-5 px-2 bg-black py-5'>
                 
                 {/* heading */}
                 <div className='subheading'>

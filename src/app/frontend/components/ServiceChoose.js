@@ -5,7 +5,7 @@ const ServiceChoose = ({data, title}) => {
 
     return (
         <>
-            <div id="ServiceChoose" className='px-5 mb-5 bg-black py-5 position-relative'>
+            <div id="ServiceChoose" className='px-md-5 px-2 mb-5 bg-black py-5 position-relative'>
                 <div className='subheading' >
                     <h4 style={{ backgroundColor: "#111", color: "#B2CA9B" }}>
                         <span className='me-3'>•</span>why choose trident creative<span className='ms-3'>•</span>
