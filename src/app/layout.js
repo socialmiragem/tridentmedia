@@ -28,11 +28,11 @@ export default function RootLayout({ children }) {
 
           <BootstrapJS />
 
-          <SmoothScroll>
             <Navbar />
+          <SmoothScroll>
             {children}
-            <Footer />
           </SmoothScroll>
+            <Footer />
 
         </LoaderProvider>
 

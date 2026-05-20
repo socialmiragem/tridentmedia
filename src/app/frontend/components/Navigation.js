@@ -211,7 +211,7 @@ export default function Navbar() {
           height: "100vh",
           background: "#fff",
           transition: "0.3s ease",
-          zIndex: 1000,
+          zIndex: 100000000,
           padding: "30px 25px",
           overflowY: "auto",
         }}

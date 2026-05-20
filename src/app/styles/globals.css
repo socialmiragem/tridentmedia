@@ -36,6 +36,9 @@ body {
 /* body {
   overflow: hidden;
 } */
+ .page-loader {
+  pointer-events: none;
+}
 .bg-primary {
   background-color: var(--primary) !important;
 }
