@@ -414,6 +414,9 @@
   #innerBanner .wrapper {
     height: 100%;
     object-fit: cover !important;
+    img{
+      height: 100% !important;
+    }
   }
   #innerBanner h2 {
     font-size: 75px;
