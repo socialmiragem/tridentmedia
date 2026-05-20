@@ -15,10 +15,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,
-body {
-  overflow: hidden;
-}
+
 
 [data-scroll-container] {
   min-height: 100vh;
@@ -28,9 +25,17 @@ html {
   height: auto;
   /* scroll-behavior: smooth; */
 }
-body {
+html.has-scroll-smooth {
   overflow: hidden;
 }
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/* body {
+  overflow: hidden;
+} */
 .bg-primary {
   background-color: var(--primary) !important;
 }
