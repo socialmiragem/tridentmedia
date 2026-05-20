@@ -1,45 +1,87 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
 
 export default function SmoothScroll({ children }) {
+  const scrollRef = useRef(null)
+
   useEffect(() => {
-    const scrollContainer = document.querySelector('[data-scroll-container]')
+    let locomotiveScroll = null
 
-    if (!scrollContainer) return
+    const initScroll = async () => {
+      if (!scrollRef.current) return
 
-    const scroll = new LocomotiveScroll({
-      el: scrollContainer,
-      smooth: true,
+      locomotiveScroll = new LocomotiveScroll({
+        el: scrollRef.current,
 
-      // desktop
-      lerp: 0.08,
-
-      // tablet
-      tablet: {
+        // smooth only on desktop
         smooth: true,
-      },
 
-      // mobile
-      smartphone: {
-        smooth: false,
-      },
-    })
+        // smoother feel
+        lerp: 0.08,
 
-    setTimeout(() => {
-      scroll.update()
-    }, 500)
+        // tablet settings
+        tablet: {
+          smooth: false,
+          breakpoint: 1024,
+        },
+
+        // mobile settings
+        smartphone: {
+          smooth: false,
+        },
+
+        reloadOnContextChange: true,
+      })
+
+      // optional refresh after load
+      setTimeout(() => {
+        if (
+          locomotiveScroll &&
+          typeof locomotiveScroll.update === 'function'
+        ) {
+          locomotiveScroll.update()
+        }
+      }, 500)
+    }
+
+    initScroll()
+
+    // refresh on resize
+    const handleResize = () => {
+      if (
+        locomotiveScroll &&
+        typeof locomotiveScroll.update === 'function'
+      ) {
+        locomotiveScroll.update()
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
 
     return () => {
-      if (scroll) scroll.destroy()
+      window.removeEventListener('resize', handleResize)
+
+      if (
+        locomotiveScroll &&
+        typeof locomotiveScroll.destroy === 'function'
+      ) {
+        locomotiveScroll.destroy()
+      }
     }
   }, [])
 
   return (
-    <div data-scroll-container>
+    <main
+      data-scroll-container
+      ref={scrollRef}
+      style={{
+        overflow: 'hidden',
+      }}
+    >
       {children}
-    </div>
+    </main>
   )
 }
