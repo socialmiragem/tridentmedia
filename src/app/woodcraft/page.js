@@ -82,7 +82,7 @@ finally {
         <SectionTitle title="what’s included" bg="#fafafa" color="#ed1c24" />
         <ServiceCards
           data={card}
-          title="our woodcraft Solution includes"
+          title="our woodcraft Solutions include"
         />
       </div>
 

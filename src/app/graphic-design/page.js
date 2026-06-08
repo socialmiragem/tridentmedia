@@ -90,7 +90,7 @@ finally {
         <SectionTitle title="what’s included" bg="#fafafa" color="#ed1c24" />
         <ServiceCards
           data={card}
-          title="our Graphic Design Solution includes"
+          title="our Graphic Design Solutions include"
         />
       </div>
 
