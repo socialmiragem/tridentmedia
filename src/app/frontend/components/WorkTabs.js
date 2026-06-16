@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Fancybox from "./Fancybox";
-
+import Image from "next/image";
 const WorkTabs = () => {
   const [galleries, setGalleries] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
@@ -63,11 +63,12 @@ const WorkTabs = () => {
                   data-fancybox={`gallery-${activeGallery.id}`}
                   data-caption={activeGallery.name}
                 >
-                  <img
+                   <img
                     src={imageUrl}
                     alt={activeGallery.name}
                     className="img-fluid"
-                  />
+                  /> 
+                  
                 </a>
               </div>
             );
