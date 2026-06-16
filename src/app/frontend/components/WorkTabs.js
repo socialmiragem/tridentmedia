@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Fancybox from "./Fancybox";
 
 const WorkTabs = () => {
   const [galleries, setGalleries] = useState([]);
@@ -50,17 +51,29 @@ const WorkTabs = () => {
       </ul>
 
       {/* Gallery Images */}
-      <div className="masonry-gallery">
-        {activeGallery.images?.map((image) => (
-          <div key={image.id} className="masonry-item">
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_URL_Gallery}/${image.image}`}
-              alt={activeGallery.name}
-              className="img-fluid"
-            />
-          </div>
-        ))}
-      </div>
+      <Fancybox>
+        <div className="masonry-gallery">
+          {activeGallery.images?.map((image) => {
+            const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL_Gallery}/${image.image}`;
+
+            return (
+              <div key={image.id} className="masonry-item">
+                <a
+                  href={imageUrl}
+                  data-fancybox={`gallery-${activeGallery.id}`}
+                  data-caption={activeGallery.name}
+                >
+                  <img
+                    src={imageUrl}
+                    alt={activeGallery.name}
+                    className="img-fluid"
+                  />
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </Fancybox>
     </div>
   );
 };
